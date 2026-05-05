@@ -1,0 +1,12 @@
+/* Main stylesheet entry point */
+@import url("base.css");
+@import url("nav.css");
+@import url("sections/hero.css");
+@import url("sections/about.css");
+@import url("sections/experience.css");
+@import url("sections/projects.css");
+@import url("sections/skills.css");
+@import url("sections/education.css");
+@import url("footer.css");
+@import url("animations.css");
+@import url("responsive.css");

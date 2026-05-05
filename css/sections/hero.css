@@ -1,0 +1,438 @@
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            ellipse 65% 55% at 80% 8%,
+            rgba(80, 200, 230, 0.09) 0%,
+            transparent 60%
+        ),
+        radial-gradient(
+            ellipse 50% 50% at 10% 90%,
+            rgba(20, 150, 122, 0.07) 0%,
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse 40% 30% at 50% 105%,
+            rgba(20, 150, 122, 0.04) 0%,
+            transparent 60%
+        );
+}
+
+.hero-peaks {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 55%;
+    opacity: 0.035;
+    pointer-events: none;
+}
+
+[data-theme="dark"] .hero-peaks {
+    opacity: 0.055;
+}
+
+#snowflakes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.snowflake {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0;
+    animation: snowDrift linear infinite;
+}
+
+@keyframes snowDrift {
+    0% {
+        transform: translateY(-10px) translateX(0);
+        opacity: 0;
+    }
+    8% {
+        opacity: 0.35;
+    }
+    92% {
+        opacity: 0.12;
+    }
+    100% {
+        transform: translateY(110vh) translateX(35px);
+        opacity: 0;
+    }
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 64px;
+    align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 28px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-glow);
+    border-radius: 99px;
+    padding: 6px 15px;
+    margin-bottom: 26px;
+    animation: riseIn 0.7s var(--ease) both;
+}
+
+.live-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: livePulse 2.2s ease infinite;
+}
+
+@keyframes livePulse {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 var(--accent-glow);
+    }
+    50% {
+        box-shadow: 0 0 0 6px transparent;
+    }
+}
+
+.hero-sig-wrap {
+    margin-bottom: 4px;
+    animation: riseIn 0.7s 0.08s var(--ease) both;
+}
+
+.hero-sig-svg {
+    height: 72px;
+    width: auto;
+    color: var(--text);
+    overflow: visible;
+    display: block;
+}
+
+.hero-headline {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(2.8rem, 6vw, 4.4rem);
+    font-weight: 700;
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    margin-bottom: 18px;
+    animation: riseIn 0.7s 0.15s var(--ease) both;
+}
+
+.hero-headline em {
+    font-style: italic;
+    color: var(--accent);
+}
+
+.hero-sub {
+    font-size: 1rem;
+    color: var(--text-mute);
+    max-width: 440px;
+    line-height: 1.85;
+    margin-bottom: 36px;
+    animation: riseIn 0.7s 0.22s var(--ease) both;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    animation: riseIn 0.7s 0.3s var(--ease) both;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 24px;
+    border-radius: 99px;
+    font-size: 0.87rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.22s var(--ease);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px var(--accent-glow);
+}
+
+.btn-ghost {
+    background: var(--bg-card);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.btn-ghost:hover {
+    border-color: var(--accent-glow);
+    color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.hero-stats {
+    display: flex;
+    align-items: center;
+    margin-top: 52px;
+    animation: riseIn 0.7s 0.38s var(--ease) both;
+}
+
+.stat-item {
+    padding-right: 32px;
+}
+
+.stat-num {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.stat-num sup {
+    font-size: 0.9rem;
+    color: var(--accent);
+    vertical-align: super;
+}
+
+.stat-lbl {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-top: 4px;
+}
+
+.stat-div {
+    width: 1px;
+    height: 34px;
+    background: var(--border);
+    margin-right: 32px;
+    flex-shrink: 0;
+}
+
+@keyframes riseIn {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ─── Hero Photo ─── */
+.hero-photo-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: riseIn 0.8s 0.2s var(--ease) both;
+}
+
+.photo-frame {
+    position: relative;
+    width: 100%;
+    max-width: 370px;
+}
+
+.photo-ring {
+    position: absolute;
+    inset: -14px;
+    border-radius: 38% 62% 55% 45% / 48% 44% 56% 52%;
+    z-index: 0;
+}
+
+.photo-ring-inner {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: conic-gradient(
+        from 200deg,
+        var(--accent-glow2) 0%,
+        transparent 35%,
+        var(--accent-glow2) 65%,
+        transparent 80%,
+        var(--accent-glow2) 100%
+    );
+    animation: ringRotate 12s linear infinite;
+}
+
+@keyframes ringRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.photo-float {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes photoFloat {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.hero-photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 36% 64% 58% 42% / 50% 46% 54% 50%;
+    box-shadow: var(--photo-shadow);
+    filter: contrast(1.06) saturate(1.08) brightness(1.02);
+    transition:
+        filter 0.4s,
+        border-radius 0.6s var(--ease),
+        box-shadow 0.4s;
+    position: relative;
+    z-index: 1;
+}
+
+.photo-frame:hover .hero-photo {
+    border-radius: 28px;
+    filter: contrast(1.08) saturate(1.12) brightness(1.03);
+    box-shadow:
+        var(--photo-shadow),
+        0 0 0 3px var(--accent-glow);
+}
+
+.photo-frame:hover .photo-ring-inner {
+    animation-duration: 5s;
+}
+
+.photo-vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    border-radius: inherit;
+    background: radial-gradient(
+        ellipse 80% 90% at 50% 50%,
+        transparent 55%,
+        rgba(13, 41, 34, 0.1) 100%
+    );
+    pointer-events: none;
+    transition: border-radius 0.6s var(--ease);
+}
+
+.photo-frame:hover .photo-vignette {
+    border-radius: 28px;
+}
+
+.photo-dot {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--accent);
+    z-index: 3;
+}
+
+.photo-dot-1 {
+    width: 12px;
+    height: 12px;
+    top: 8%;
+    right: -6%;
+    opacity: 0.55;
+    animation: dotPulse 3.4s ease-in-out infinite;
+}
+
+.photo-dot-2 {
+    width: 7px;
+    height: 7px;
+    bottom: 14%;
+    left: -5%;
+    opacity: 0.4;
+    animation: dotPulse 4.1s ease-in-out 0.8s infinite;
+}
+
+.photo-dot-3 {
+    width: 4.5px;
+    height: 4.5px;
+    top: 38%;
+    left: -8%;
+    opacity: 0.3;
+    animation: dotPulse 5s ease-in-out 1.6s infinite;
+}
+
+@keyframes dotPulse {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.55;
+    }
+    50% {
+        transform: scale(1.4);
+        opacity: 0.25;
+    }
+}
+
+.photo-status {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    background: var(--bg-card);
+    border: 1px solid var(--accent-glow);
+    border-radius: 99px;
+    padding: 8px 18px;
+    box-shadow: var(--shadow-sm);
+    animation: riseIn 0.7s 0.5s var(--ease) both;
+}
+
+.photo-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: livePulse 2s ease infinite;
+}

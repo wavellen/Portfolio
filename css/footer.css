@@ -1,0 +1,67 @@
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 48px 0;
+}
+
+.foot-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.foot-brand {
+    color: var(--text);
+}
+
+.foot-brand svg {
+    height: 40px;
+    width: auto;
+    overflow: visible;
+}
+
+.foot-sub {
+    font-size: 0.77rem;
+    color: var(--text-faint);
+    margin-top: 4px;
+}
+
+.foot-links {
+    display: flex;
+    gap: 10px;
+}
+
+.foot-link {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-mute);
+    box-shadow: var(--shadow-xs);
+    transition: all 0.22s;
+}
+
+.foot-link:hover {
+    border-color: var(--accent-glow);
+    color: var(--accent);
+    background: var(--accent-soft);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+}
+
+.foot-link svg {
+    width: 18px;
+    height: 18px;
+}

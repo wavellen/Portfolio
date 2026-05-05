@@ -1,0 +1,78 @@
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 860px) {
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .hero-photo-col {
+        order: -1;
+    }
+
+    .photo-frame {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .hero-name {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 70px 0;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .proj-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .nav-pill {
+        display: none;
+    }
+
+    .hero-stats {
+        gap: 0;
+        flex-wrap: wrap;
+    }
+
+    .stat-item {
+        padding: 0 22px 0 0;
+        margin-bottom: 12px;
+    }
+
+    .stat-div {
+        display: none;
+    }
+
+    .edu-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 24px;
+    }
+
+    .exp-card {
+        padding: 24px 22px;
+    }
+
+    .hero-name {
+        font-size: 45px;
+    }
+
+    #mainNav {
+        grid-template-columns: 1fr 1fr;
+    }
+}

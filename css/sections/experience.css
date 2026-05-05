@@ -1,0 +1,156 @@
+/* ============================================
+   EXPERIENCE SECTION
+   ============================================ */
+
+#experience {
+    border-top: 1px solid var(--border);
+}
+
+.exp-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius);
+    padding: 40px 44px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition:
+        box-shadow 0.32s,
+        border-color 0.32s;
+    --cx: 50%;
+    --cy: 50%;
+}
+
+.exp-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle 220px at var(--cx) var(--cy),
+        var(--accent-soft),
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.35s;
+    pointer-events: none;
+    border-radius: var(--radius);
+}
+
+.exp-card:hover::before {
+    opacity: 1;
+}
+
+.exp-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-glow);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-card);
+}
+
+.exp-role {
+    font-size: 1.48rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+}
+
+.exp-company {
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: var(--accent);
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.exp-company::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.exp-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    align-items: flex-end;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.73rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 5px 13px;
+    border-radius: 99px;
+}
+
+.badge-teal {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border: 1px solid var(--accent-glow);
+}
+
+.badge-mute {
+    background: var(--bg-deep);
+    color: var(--text-mute);
+    border: 1px solid var(--border);
+}
+
+.exp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.exp-row {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.exp-bul {
+    width: 22px;
+    height: 22px;
+    background: var(--accent-soft);
+    border: 1.5px solid var(--accent-glow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.exp-bul::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.exp-txt {
+    font-size: 0.91rem;
+    color: var(--text-mute);
+    line-height: 1.72;
+}
+
+.exp-txt strong {
+    color: var(--text);
+    font-weight: 600;
+}

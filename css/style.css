@@ -10,3 +10,7 @@
 @import url("footer.css");
 @import url("animations.css");
 @import url("responsive.css");
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
